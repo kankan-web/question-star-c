@@ -1,5 +1,6 @@
 import Head from "next/head";
 import QuestionInput from "../components/QuestionComponents/QuestionInput/QuestionInput";
+import QuestinoRadio from "../components/QuestionComponents/QuestionRadio/QuestionRadio";
 type PropsType = {
   id: string;
 };
@@ -18,10 +19,25 @@ export default function Question(props: PropsType) {
       <main>
         <h1>Questino Page</h1>
         <p>{props.id}</p>
-        <QuestionInput
-          fe_id="c1"
-          props={{ title: "你的问题", placeholder: "请输入" }}
-        />
+        <form action="">
+          <input type="hidden" name="questionId" defaultValue={props.id} />
+          <QuestionInput
+            fe_id="c1"
+            props={{ title: "你的问题", placeholder: "请输入" }}
+          />
+          <QuestinoRadio
+            fe_id="c2"
+            props={{
+              title: "你的姓名",
+              options: [
+                { value: "male", text: "男" },
+                { value: "female", text: "女" },
+              ],
+              value: "male",
+              isVertical: false,
+            }}
+          />
+        </form>
       </main>
     </>
   );
