@@ -1,16 +1,9 @@
-import Head from "next/head";
+import PageWrapper from "./components/PageWrapper";
 export default function Fail() {
   return (
-    <>
-      <Head>
-        <title>提交成功</title>
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <link rel="icon" href="/public/favicon.ico" />
-      </Head>
-      <main>
-        <h1>成功</h1>
-        <p>问卷提交成功</p>
-      </main>
-    </>
+    <PageWrapper title="提交失败">
+      <h1>失败</h1>
+      <p>问卷提交失败</p>
+    </PageWrapper>
   );
 }
